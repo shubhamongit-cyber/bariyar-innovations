@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="130" viewBox="15 15 480 125" role="img" aria-label="BARIYAR INNOVATIONS logo">
+  <g transform="translate(20 22)">
+    <path d="M45 8 L88 32 L88 78 L45 102 L2 78 L2 32 Z" fill="#1261A0"/>
+    <path d="M45 8 L67 20 L67 66 L45 78 L23 66 L23 20 Z" fill="#FFFFFF"/>
+    <path d="M23 20 L45 8 L67 20 L45 32 Z" fill="#F97316"/>
+    <circle cx="78" cy="83" r="12" fill="#EF4444"/>
+    <path d="M76 83 L83 76" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="135" y="74" font-family="'Outfit', Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#1261A0" letter-spacing="1.5">BARIYAR</text>
+  <text x="135" y="118" font-family="'Outfit', Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#F97316" letter-spacing="3.5">INNOVATIONS</text>
+</svg>
