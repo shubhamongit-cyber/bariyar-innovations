@@ -1,18 +1,28 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const AnimatedCounter = ({ 
   target, 
   decimals = 0, 
-  duration = 2000, 
+  duration = 1800, 
   prefix = '', 
   suffix = '',
   className = ''
 }) => {
-  const [count, setCount] = useState(0);
   const elementRef = useRef(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
+    const node = elementRef.current;
+    if (!node) return;
+
+    const format = (num) => {
+      const val = decimals > 0 ? num.toFixed(decimals) : Math.floor(num).toString();
+      return `${prefix}${val}${suffix}`;
+    };
+
+    // Set initial target text to avoid layout jumps
+    node.textContent = format(target);
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -23,48 +33,44 @@ export const AnimatedCounter = ({
           const startVal = 0;
           const endVal = target;
 
-          // Smooth exponential ease-out curve
           const easeOutQuart = (x) => 1 - Math.pow(1 - x, 4);
 
+          let rafId;
           const updateCount = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const easedProgress = easeOutQuart(progress);
             
             const currentVal = startVal + (endVal - startVal) * easedProgress;
-            setCount(currentVal);
+            if (node) {
+              node.textContent = format(currentVal);
+            }
 
             if (progress < 1) {
-              requestAnimationFrame(updateCount);
-            } else {
-              setCount(endVal);
+              rafId = requestAnimationFrame(updateCount);
+            } else if (node) {
+              node.textContent = format(endVal);
             }
           };
 
-          requestAnimationFrame(updateCount);
+          rafId = requestAnimationFrame(updateCount);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
+      observer.disconnect();
     };
-  }, [target, duration]);
+  }, [target, decimals, duration, prefix, suffix]);
 
-  const formattedValue = decimals > 0 
-    ? count.toFixed(decimals) 
-    : Math.floor(count).toString();
+  const initialVal = decimals > 0 ? target.toFixed(decimals) : Math.floor(target).toString();
 
   return (
     <span ref={elementRef} className={`animated-counter-value ${className}`}>
-      {prefix}{formattedValue}{suffix}
+      {prefix}{initialVal}{suffix}
     </span>
   );
 };
