@@ -1,13 +1,95 @@
 export const techCategories = [
-  { id: "all", label: "All Technologies" },
-  { id: "frontend", label: "Frontend" },
-  { id: "backend", label: "Backend & API" },
-  { id: "mobile", label: "Mobile Apps" },
-  { id: "database", label: "Databases" },
-  { id: "tools", label: "Cloud & DevOps" }
+  { 
+    id: "ai", 
+    label: "AI", 
+    tagline: "AI-powered platforms and LLMs to build intelligent, generative applications." 
+  },
+  { 
+    id: "frontend", 
+    label: "Frontend",
+    tagline: "Modern UI frameworks, reactive architectures, and typed client systems."
+  },
+  { 
+    id: "backend", 
+    label: "Backend & API",
+    tagline: "High-throughput asynchronous runtimes, microservices, and secure REST/GraphQL APIs."
+  },
+  { 
+    id: "mobile", 
+    label: "Mobile Apps",
+    tagline: "Cross-platform and native iOS & Android applications engineered for speed."
+  },
+  { 
+    id: "database", 
+    label: "Databases",
+    tagline: "ACID-compliant relational, NoSQL document, and real-time in-memory stores."
+  },
+  { 
+    id: "tools", 
+    label: "Cloud & DevOps",
+    tagline: "Automated CI/CD pipelines, container orchestration, and cloud infrastructure."
+  }
 ];
 
 export const techStackData = [
+  // ==================== AI & LLMs ====================
+  {
+    name: "OpenAI API",
+    category: "ai",
+    badge: "LLM & GPT-4o",
+    icon: "./assets/tech/openai.svg",
+    color: "#10A37F",
+    desc: "Enterprise GPT-4o, reasoning models, Whisper audio transcription, and custom assistive AI agents."
+  },
+  {
+    name: "Claude API",
+    category: "ai",
+    badge: "Anthropic Claude 3.5",
+    icon: "./assets/tech/claude.svg",
+    color: "#CC785C",
+    desc: "High-context intelligence, code generation, nuanced reasoning, and enterprise AI workflows."
+  },
+  {
+    name: "Meta",
+    category: "ai",
+    badge: "Llama 3 & Open AI",
+    icon: "./assets/tech/meta.svg",
+    color: "#0668E1",
+    desc: "Self-hosted high-efficiency open weights models with fine-tuning on custom enterprise data."
+  },
+  {
+    name: "Mistral AI",
+    category: "ai",
+    badge: "High-Speed LLMs",
+    icon: "./assets/tech/mistral.svg",
+    color: "#FF7000",
+    desc: "State-of-the-art European open & optimized models including Mistral Large and Codestral."
+  },
+  {
+    name: "Google",
+    category: "ai",
+    badge: "Gemini & Vertex AI",
+    icon: "./assets/tech/google.svg",
+    color: "#4285F4",
+    desc: "Gemini 1.5 Pro multimodal processing, Vertex AI, and native Google Cloud enterprise AI ecosystems."
+  },
+  {
+    name: "Hugging Face",
+    category: "ai",
+    badge: "Model Hub & Inference",
+    icon: "./assets/tech/huggingface.svg",
+    color: "#FFD21E",
+    desc: "Open-source model repository, Transformers pipelines, datasets, and serverless edge endpoints."
+  },
+  {
+    name: "Grok",
+    category: "ai",
+    badge: "xAI Real-Time",
+    icon: "./assets/tech/grok.svg",
+    color: "#000000",
+    desc: "High-throughput reasoning, real-time data ingestion, and advanced conversational agent architectures."
+  },
+
   // ==================== FRONTEND ====================
   {
     name: "React.js",

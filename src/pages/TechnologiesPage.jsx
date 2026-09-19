@@ -9,17 +9,16 @@ import { OrbitingTechStack } from '../components/tech/OrbitingTechStack';
 import { techStackData, techCategories } from '../data/techData';
 
 export const TechnologiesPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('ai');
 
-  const filteredTech = selectedCategory === 'all'
-    ? techStackData
-    : techStackData.filter((t) => t.category === selectedCategory);
+  const currentCategoryObj = techCategories.find(c => c.id === selectedCategory) || techCategories[0];
+  const filteredTech = techStackData.filter((t) => t.category === selectedCategory);
 
   return (
     <>
       <SEO 
         title="Technologies & Cloud Frameworks — BARIYAR INNOVATIONS" 
-        description="Explore the modern tech stack and cloud frameworks leveraged by BARIYAR INNOVATIONS: React, Vue, Node.js, Python, Flutter, PostgreSQL, Docker, and AWS."
+        description="Explore the modern tech stack and cloud frameworks leveraged by BARIYAR INNOVATIONS: OpenAI, Claude, Llama, React, Vue, Node.js, Python, Flutter, PostgreSQL, Docker, and AWS."
       />
 
       <PageHero
@@ -60,14 +59,20 @@ export const TechnologiesPage = () => {
             ))}
           </div>
 
+          {currentCategoryObj && currentCategoryObj.tagline && (
+            <p className="tech-category-tagline">
+              {currentCategoryObj.tagline}
+            </p>
+          )}
+
           <div className="tech-cards-masonry">
             {filteredTech.map((tech, idx) => (
               <div key={idx} className="tech-grid-card">
                 <div className="tech-grid-icon-box">
-                  {tech.icon && (tech.icon.startsWith('http') || tech.icon.startsWith('/')) ? (
+                  {tech.icon ? (
                     <img src={tech.icon} alt={tech.name} className="tech-grid-icon-img" loading="lazy" />
                   ) : (
-                    <span className="tech-grid-icon">{tech.icon}</span>
+                    <span className="tech-grid-icon">⚡</span>
                   )}
                 </div>
                 <h4>{tech.name}</h4>

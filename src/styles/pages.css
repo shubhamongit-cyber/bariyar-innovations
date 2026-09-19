@@ -213,7 +213,17 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
+}
+
+.tech-category-tagline {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .tech-filter-tab {

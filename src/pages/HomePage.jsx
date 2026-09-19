@@ -41,14 +41,13 @@ const iconMap = {
 };
 
 export const HomePage = () => {
-  const [selectedTechCategory, setSelectedTechCategory] = useState('all');
+  const [selectedTechCategory, setSelectedTechCategory] = useState('ai');
   const [activeModalProject, setActiveModalProject] = useState(null);
   const [faqSearch, setFaqSearch] = useState('');
   const [openFaqId, setOpenFaqId] = useState(1);
 
-  const filteredTech = selectedTechCategory === 'all' 
-    ? techStackData.slice(0, 12) 
-    : techStackData.filter(t => t.category === selectedTechCategory);
+  const currentCategoryObj = techCategories.find(c => c.id === selectedTechCategory) || techCategories[0];
+  const filteredTech = techStackData.filter(t => t.category === selectedTechCategory);
 
   const filteredFaqs = faqData.filter(faq => 
     faq.question.toLowerCase().includes(faqSearch.toLowerCase()) ||
@@ -331,14 +330,20 @@ export const HomePage = () => {
             ))}
           </div>
 
+          {currentCategoryObj && currentCategoryObj.tagline && (
+            <p className="tech-category-tagline">
+              {currentCategoryObj.tagline}
+            </p>
+          )}
+
           <div className="tech-cards-masonry">
             {filteredTech.map((tech, idx) => (
               <div key={idx} className="tech-grid-card">
                 <div className="tech-grid-icon-box">
-                  {tech.icon && (tech.icon.startsWith('http') || tech.icon.startsWith('/')) ? (
+                  {tech.icon ? (
                     <img src={tech.icon} alt={tech.name} className="tech-grid-icon-img" loading="lazy" />
                   ) : (
-                    <span className="tech-grid-icon">{tech.icon}</span>
+                    <span className="tech-grid-icon">⚡</span>
                   )}
                 </div>
                 <h4>{tech.name}</h4>
