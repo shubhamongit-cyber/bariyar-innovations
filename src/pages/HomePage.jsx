@@ -41,7 +41,7 @@ const iconMap = {
 };
 
 export const HomePage = () => {
-  const [selectedTechCategory, setSelectedTechCategory] = useState('ai');
+  const [selectedTechCategory, setSelectedTechCategory] = useState('frontend');
   const [activeModalProject, setActiveModalProject] = useState(null);
   const [faqSearch, setFaqSearch] = useState('');
   const [openFaqId, setOpenFaqId] = useState(1);

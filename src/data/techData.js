@@ -1,10 +1,5 @@
 export const techCategories = [
   { 
-    id: "ai", 
-    label: "AI", 
-    tagline: "AI-powered platforms and LLMs to build intelligent, generative applications." 
-  },
-  { 
     id: "frontend", 
     label: "Frontend",
     tagline: "Modern UI frameworks, reactive architectures, and typed client systems."
@@ -28,68 +23,15 @@ export const techCategories = [
     id: "tools", 
     label: "Cloud & DevOps",
     tagline: "Automated CI/CD pipelines, container orchestration, and cloud infrastructure."
+  },
+  { 
+    id: "ai", 
+    label: "AI", 
+    tagline: "AI-powered platforms and LLMs to build intelligent, generative applications." 
   }
 ];
 
 export const techStackData = [
-  // ==================== AI & LLMs ====================
-  {
-    name: "OpenAI API",
-    category: "ai",
-    badge: "LLM & GPT-4o",
-    icon: "./assets/tech/openai.svg",
-    color: "#10A37F",
-    desc: "Enterprise GPT-4o, reasoning models, Whisper audio transcription, and custom assistive AI agents."
-  },
-  {
-    name: "Claude API",
-    category: "ai",
-    badge: "Anthropic Claude 3.5",
-    icon: "./assets/tech/claude.svg",
-    color: "#CC785C",
-    desc: "High-context intelligence, code generation, nuanced reasoning, and enterprise AI workflows."
-  },
-  {
-    name: "Meta",
-    category: "ai",
-    badge: "Llama 3 & Open AI",
-    icon: "./assets/tech/meta.svg",
-    color: "#0668E1",
-    desc: "Self-hosted high-efficiency open weights models with fine-tuning on custom enterprise data."
-  },
-  {
-    name: "Mistral AI",
-    category: "ai",
-    badge: "High-Speed LLMs",
-    icon: "./assets/tech/mistral.svg",
-    color: "#FF7000",
-    desc: "State-of-the-art European open & optimized models including Mistral Large and Codestral."
-  },
-  {
-    name: "Google",
-    category: "ai",
-    badge: "Gemini & Vertex AI",
-    icon: "./assets/tech/google.svg",
-    color: "#4285F4",
-    desc: "Gemini 1.5 Pro multimodal processing, Vertex AI, and native Google Cloud enterprise AI ecosystems."
-  },
-  {
-    name: "Hugging Face",
-    category: "ai",
-    badge: "Model Hub & Inference",
-    icon: "./assets/tech/huggingface.svg",
-    color: "#FFD21E",
-    desc: "Open-source model repository, Transformers pipelines, datasets, and serverless edge endpoints."
-  },
-  {
-    name: "Grok",
-    category: "ai",
-    badge: "xAI Real-Time",
-    icon: "./assets/tech/grok.svg",
-    color: "#000000",
-    desc: "High-throughput reasoning, real-time data ingestion, and advanced conversational agent architectures."
-  },
-
   // ==================== FRONTEND ====================
   {
     name: "React.js",
@@ -426,5 +368,63 @@ export const techStackData = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     color: "#F24E1E",
     desc: "Collaborative interface design, interactive wireframing, and component design tokens."
+  },
+
+  // ==================== AI & LLMs ====================
+  {
+    name: "OpenAI API",
+    category: "ai",
+    badge: "LLM & GPT-4o",
+    icon: "./assets/tech/openai.svg",
+    color: "#10A37F",
+    desc: "Enterprise GPT-4o, reasoning models, Whisper audio transcription, and custom assistive AI agents."
+  },
+  {
+    name: "Claude API",
+    category: "ai",
+    badge: "Anthropic Claude 3.5",
+    icon: "./assets/tech/claude.svg",
+    color: "#CC785C",
+    desc: "High-context intelligence, code generation, nuanced reasoning, and enterprise AI workflows."
+  },
+  {
+    name: "Meta",
+    category: "ai",
+    badge: "Llama 3 & Open AI",
+    icon: "./assets/tech/meta.svg",
+    color: "#0668E1",
+    desc: "Self-hosted high-efficiency open weights models with fine-tuning on custom enterprise data."
+  },
+  {
+    name: "Mistral AI",
+    category: "ai",
+    badge: "High-Speed LLMs",
+    icon: "./assets/tech/mistral.svg",
+    color: "#FF7000",
+    desc: "State-of-the-art European open & optimized models including Mistral Large and Codestral."
+  },
+  {
+    name: "Google",
+    category: "ai",
+    badge: "Gemini & Vertex AI",
+    icon: "./assets/tech/google.svg",
+    color: "#4285F4",
+    desc: "Gemini 1.5 Pro multimodal processing, Vertex AI, and native Google Cloud enterprise AI ecosystems."
+  },
+  {
+    name: "Hugging Face",
+    category: "ai",
+    badge: "Model Hub & Inference",
+    icon: "./assets/tech/huggingface.svg",
+    color: "#FFD21E",
+    desc: "Open-source model repository, Transformers pipelines, datasets, and serverless edge endpoints."
+  },
+  {
+    name: "Grok",
+    category: "ai",
+    badge: "xAI Real-Time",
+    icon: "./assets/tech/grok.svg",
+    color: "#000000",
+    desc: "High-throughput reasoning, real-time data ingestion, and advanced conversational agent architectures."
   }
 ];

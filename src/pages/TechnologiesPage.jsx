@@ -9,7 +9,7 @@ import { OrbitingTechStack } from '../components/tech/OrbitingTechStack';
 import { techStackData, techCategories } from '../data/techData';
 
 export const TechnologiesPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('ai');
+  const [selectedCategory, setSelectedCategory] = useState('frontend');
 
   const currentCategoryObj = techCategories.find(c => c.id === selectedCategory) || techCategories[0];
   const filteredTech = techStackData.filter((t) => t.category === selectedCategory);
