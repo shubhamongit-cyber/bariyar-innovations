@@ -426,5 +426,13 @@ export const techStackData = [
     icon: "./assets/tech/grok.svg",
     color: "#000000",
     desc: "High-throughput reasoning, real-time data ingestion, and advanced conversational agent architectures."
+  },
+  {
+    name: "Antigravity",
+    category: "ai",
+    badge: "Agentic AI & IDE",
+    icon: "./assets/tech/antigravity.svg",
+    color: "#4285F4",
+    desc: "Autonomous agentic engineering, intelligent pair programming, and full-stack software intelligence."
   }
 ];

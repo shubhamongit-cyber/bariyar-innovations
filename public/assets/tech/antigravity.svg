@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="agyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer orbital ring -->
+  <circle cx="24" cy="24" r="21" fill="none" stroke="url(#agyGrad)" stroke-width="2.5" stroke-dasharray="4 2" opacity="0.6"/>
+  <!-- Central floating sphere -->
+  <circle cx="24" cy="24" r="10" fill="url(#agyGrad)"/>
+  <!-- Core spark -->
+  <polygon points="24,6 27,19 40,24 27,29 24,42 21,29 8,24 21,19" fill="#FFFFFF" opacity="0.95"/>
+  <circle cx="24" cy="24" r="4" fill="#FFFFFF"/>
+</svg>
