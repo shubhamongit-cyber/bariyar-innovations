@@ -428,7 +428,7 @@ export const techStackData = [
     desc: "High-throughput reasoning, real-time data ingestion, and advanced conversational agent architectures."
   },
   {
-    name: "Antigravity",
+    name: "Google Antigravity",
     category: "ai",
     badge: "Agentic AI & IDE",
     icon: "./assets/tech/antigravity.svg",

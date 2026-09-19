@@ -1,16 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
   <defs>
-    <linearGradient id="agyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#4285F4"/>
-      <stop offset="50%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#2B6CB0"/>
     </linearGradient>
+    <linearGradient id="gRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA4335"/>
+      <stop offset="100%" stop-color="#C5221F"/>
+    </linearGradient>
+    <linearGradient id="gYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBC05"/>
+      <stop offset="100%" stop-color="#F29900"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34A853"/>
+      <stop offset="100%" stop-color="#188038"/>
+    </linearGradient>
+    <linearGradient id="gMulti" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="33%" stop-color="#EA4335"/>
+      <stop offset="66%" stop-color="#FBBC05"/>
+      <stop offset="100%" stop-color="#34A853"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
-  <!-- Outer orbital ring -->
-  <circle cx="24" cy="24" r="21" fill="none" stroke="url(#agyGrad)" stroke-width="2.5" stroke-dasharray="4 2" opacity="0.6"/>
-  <!-- Central floating sphere -->
-  <circle cx="24" cy="24" r="10" fill="url(#agyGrad)"/>
-  <!-- Core spark -->
-  <polygon points="24,6 27,19 40,24 27,29 24,42 21,29 8,24 21,19" fill="#FFFFFF" opacity="0.95"/>
-  <circle cx="24" cy="24" r="4" fill="#FFFFFF"/>
+
+  <!-- Outer Antigravity Orbital Halo -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="url(#gMulti)" stroke-width="1.8" opacity="0.35" stroke-dasharray="3 3"/>
+
+  <!-- Google 4-Color Antigravity Emblem Geometry -->
+  <!-- Top Blue Wing / Floating Inverted Apex -->
+  <path d="M24 4 L33 19 L24 24 L15 19 Z" fill="url(#gBlue)" />
+  
+  <!-- Right Red & Yellow Wing -->
+  <path d="M44 24 L29 33 L24 24 L33 19 Z" fill="url(#gRed)" />
+  <path d="M33 41 L24 32 L24 24 L29 33 Z" fill="url(#gYellow)" />
+  
+  <!-- Left Green & Blue Wing -->
+  <path d="M4 24 L19 19 L24 24 L15 33 Z" fill="url(#gGreen)" />
+  <path d="M15 41 L24 32 L24 24 L15 33 Z" fill="#34A853" opacity="0.85" />
+  
+  <!-- Core Antigravity Floating Spark (White 4-point Diamond) -->
+  <path d="M24 14 L26.8 21.2 L34 24 L26.8 26.8 L24 34 L21.2 26.8 L14 24 L21.2 21.2 Z" fill="#FFFFFF" filter="url(#glow)"/>
+  <circle cx="24" cy="24" r="2.5" fill="#4285F4"/>
 </svg>
