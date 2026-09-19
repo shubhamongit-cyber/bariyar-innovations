@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 let PORT = parseInt(process.env.PORT || '3000', 10);
-const PUBLIC_DIR = __dirname;
+// Check if dist exists for production build, otherwise serve root
+const DIST_DIR = path.join(__dirname, 'dist');
+const PUBLIC_DIR = fs.existsSync(DIST_DIR) ? DIST_DIR : __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -34,20 +36,14 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      const htmlPath = filePath + '.html';
-      fs.stat(htmlPath, (err2, stats2) => {
-        if (!err2 && stats2.isFile()) {
-          serveFile(htmlPath, res);
+      // SPA Fallback: serve index.html for client-side routing
+      const indexPath = path.join(PUBLIC_DIR, 'index.html');
+      fs.stat(indexPath, (err3, stats3) => {
+        if (!err3 && stats3.isFile()) {
+          serveFile(indexPath, res);
         } else {
-          const indexPath = path.join(PUBLIC_DIR, 'index.html');
-          fs.stat(indexPath, (err3, stats3) => {
-            if (!err3 && stats3.isFile()) {
-              serveFile(indexPath, res);
-            } else {
-              res.writeHead(404, { 'Content-Type': 'text/plain' });
-              res.end('404 Not Found');
-            }
-          });
+          res.writeHead(404, { 'Content-Type': 'text/plain' });
+          res.end('404 Not Found');
         }
       });
       return;
@@ -78,7 +74,8 @@ function serveFile(filePath, res) {
 function startServer(portToTry) {
   server.listen(portToTry, () => {
     console.log(`\n======================================================`);
-    console.log(`  🚀 BARIYAR INNOVATIONS Server Running!`);
+    console.log(`  🚀 BARIYAR INNOVATIONS React Application Running!`);
+    console.log(`  📁 Serving from: ${PUBLIC_DIR}`);
     console.log(`  🔗 Local URL: http://localhost:${portToTry}`);
     console.log(`======================================================\n`);
   });
